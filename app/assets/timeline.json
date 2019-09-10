@@ -1,7 +1,7 @@
 [
 	{
 		"date": -13800000000,
-		"label": "Big Bang",
+		"label": "பெரு வெடிப்பு",
 		"article":"big_bang.txt",
 		"background": [0, 38, 75],
 		"accent": [246, 76, 130, 255],
@@ -30,7 +30,7 @@
 	},
 	{
 		"date": -13000000000,
-		"label": "Birth of the Milky Way",
+		"label": "பால் வழி அண்டம் பிறப்பு",
 		"id":"milky",
 		"article": "milky_way.txt",
 		"asset": 
@@ -44,7 +44,7 @@
 	},
 	{
 		"date": -4600000000,
-		"label": "Sun is Born",
+		"label": "சூரியனின் தோற்றம்",
 		"article":"sun.txt",
 		"accent": [255, 166, 20, 255],
 		"asset": 
@@ -60,7 +60,7 @@
 	},
 	{
 		"date": -4505000000,
-		"label": "Earth is Born",
+		"label": "பூமியின் பிறப்பு",
 		"article":"earth.txt",
 		"asset": 
 		{
@@ -74,7 +74,7 @@
 	},
 	{
 		"date": -4100000000,
-		"label": "Heavy Bombardment",
+		"label": "கடுமையான விண்கல் தாக்குதல்",
 		"article": "bombardment.txt",
 		"accent": [255, 63, 0, 255],
 		"asset": 
@@ -89,7 +89,7 @@
 	},
 	{
 		"start": -4000000000,
-		"label": "Life on Earth",
+		"label": "பூமியில் உயிர்கள்",
 		"article": "life_on_earth.txt",
 		"background": [31, 89, 143],
 		"ticks": 
@@ -119,7 +119,7 @@
 	},
 	{
 		"date": -3800000000,
-		"label": "Single Celled Organisms",
+		"label": "ஒரு செல் உயிரினம்",
 		"article":"single_celled_organisms.txt",
 		"asset": 
 		{
@@ -130,7 +130,7 @@
 	},
 	{
 		"start": -600000000,
-		"label": "Animals",
+		"label": "விலங்குகள்",
 		"article":"animals.txt",
 		"asset": 
 		{
@@ -157,7 +157,7 @@
 	},
 	{
 		"date": -530000000,
-		"label": "Fish",
+		"label": "மீன்கள்",
 		"article":"fish.txt",
 		"id":"fish",
 		"accent": [55, 134, 222, 255],
@@ -172,7 +172,7 @@
 	},
 	{
 		"date": -396000000,
-		"label": "Insects",
+		"label": "பூச்சிகள்",
 		"article":"insects.txt",
 		"accent": [55, 134, 222, 255],
 		"asset": 
@@ -184,7 +184,7 @@
 	},
 	{
 		"date": -312000000,
-		"label": "Reptiles",
+		"label": "ஊர்வன",
 		"article":"reptiles.txt",
 		"accent": [55, 134, 222, 255],
 		"asset": 
@@ -197,7 +197,7 @@
 	{
 		"start": -230000000,
 		"end": -65000000,
-		"label": "Dinosaur Age",
+		"label": "டைனோசோர்கள் காலம்",
 		"article": "dinosaurs.txt",
 		"id":"dinosaur",
 		"asset": 
@@ -211,7 +211,7 @@
 	},
 	{
 		"date": -150000000,
-		"label": "Stegosaurus",
+		"label": "ஸ்டெகோசொரஸ்",
 		"article":"stegosaurus.txt",
 		"accent": [235, 155, 75, 255],
 		"asset": 
@@ -225,7 +225,7 @@
 	},
 	{
 		"date": -200000000,
-		"label": "Mammals",
+		"label": "பாலூட்டிகள்",
 		"article":"mammals.txt",
 		"id":"mammal",
 		"asset": 
@@ -238,7 +238,7 @@
 	},
 	{
 		"date": -68000000,
-		"label": "Tyrannosaurus",
+		"label": "ட்ரைனோசரஸ்",
 		"article":"trex.txt",
 		"accent": [235, 155, 75, 255],
 		"asset": 
@@ -251,7 +251,7 @@
 	},
 	{
 		"date": -65000001,
-		"label": "Dinosaur Extinction",
+		"label": "டைனோசர் அழிவு",
 		"article":"dino_extinction.txt",
 		"accent": [235, 155, 75, 255],
 		"asset": 
@@ -264,7 +264,7 @@
 	},
 	{
 		"start": -6000000,
-		"label": "Humans",
+		"label": "மனிதர்கள்",
 		"article":"humans.txt",
 		"background": [255, 255, 255],
 		"accent": [202, 79, 63, 255],
@@ -292,7 +292,7 @@
 	},
 	{
 		"date": -4000000,
-		"label": "Last Common\nAncestor with Apes",
+		"label": "மனித பரிணாமத்திற்கு முந்தைய முன்னோர்கள் குரங்குகளே",
 		"article":"last_common_ancestor_apes.txt",
 		"asset": 
 		{
@@ -304,7 +304,7 @@
 	},
 	{
 		"date": -3300000,
-		"label": "Constructed Tools",
+		"label": "ஆதி மனிதனின் கற்கருவிகள்",
 		"article":"tools.txt",
 		"asset": 
 		{
@@ -316,7 +316,7 @@
 	},
 	{
 		"date": -1500000,
-		"label": "Control Fire",
+		"label": "நெருப்பைக் கட்டுப்படுத்துதல்",
 		"article":"fire.txt",
 		"asset": 
 		{
@@ -328,7 +328,7 @@
 	},
 	{
 		"start": -300000,
-		"label": "Homo Sapiens Sapiens",
+		"label": "ஓமோ சப்பியன்ஸ் சப்பியன்ஸ்",
 		"article":"sapiens.txt",
 		"asset": 
 		{
@@ -340,7 +340,7 @@
 	},
 	{
 		"date": -12000,
-		"label": "First Temple",
+		"label": "முதல் கோயில்",
 		"article":"first_temple.txt",
 		"asset": 
 		{
@@ -352,7 +352,7 @@
 	},
 	{
 		"date": -10000,
-		"label": "Agricultural Revolution",
+		"label": "விவசாயப் புரட்சி",
 		"article":"agricultural_revolution.txt",
 		"asset": 
 		{
@@ -365,7 +365,7 @@
 	},
 	{
 		"date": -5000,
-		"label": "Writing",
+		"label": "எழுதுதல்",
 		"article":"writing.txt",
 		"asset": 
 		{
@@ -379,7 +379,7 @@
 	},
 	{
 		"date": -2630,
-		"label": "First Pyramid Built",
+		"label": "முதல் பிரமிட் கட்டிடம்",
 		"article":"pyramids.txt",
 		"asset": 
 		{
@@ -391,7 +391,7 @@
 	},
 	{
 		"date": -27,
-		"label": "Roman Empire",
+		"label": "ரேமன் பேரரசு",
 		"article":"roman_empire.txt",
 		"asset": 
 		{
@@ -405,7 +405,7 @@
 	},
 	{
 		"start": -3500,
-		"label": "Recorded History",
+		"label": "வரலாற்று சான்றுகள்",
 		"article":"history.txt",
 		"asset": 
 		{
@@ -418,7 +418,7 @@
 	{
 		"start": 1095,
 		"end": 1291,
-		"label": "Crusades",
+		"label": "சிலுவைப் போர்",
 		"article":"crusades.txt",
 		"accent": [227, 21, 55, 255],
 		"asset": 
@@ -431,7 +431,7 @@
 	},
 	{
 		"date": 1687,
-		"label": "Newton's\nTheory of Gravity",
+		"label": "நியூட்டனின் புவிஈர்ப்பு விசை விதி",
 		"article":"newton.txt",
 		"asset": 
 		{
@@ -443,7 +443,7 @@
 	},
 	{
 		"date": 1760,
-		"label": "Industrialization",
+		"label": "தொழிற்புரட்சி",
 		"article":"industrialization.txt",
 		"asset": 
 		{
@@ -455,7 +455,7 @@
 	},
 	{
 		"date": 1453,
-		"label": "Constantinople",
+		"label": "கான்ஸ்டண்டினோப்பிள்",
 		"article":"constantinople.txt",
 		"asset": 
 		{
@@ -479,7 +479,7 @@
 	{
 		"start": 1914,
 		"end": 1918,
-		"label": "World War I",
+		"label": "முதல் உலகப்போர்",
 		"article":"world_war_i.txt",
 		"accent": [227, 21, 55, 255],
 		"asset": 
@@ -492,7 +492,7 @@
 	{
 		"start": 1947,
 		"end": 1991,
-		"label": "Cold War",
+		"label": "பனிப்போர்",
 		"accent": [227, 21, 55, 255],
 		"article":"cold_war.txt",
 		"asset": 
@@ -505,7 +505,7 @@
 	},
 	{
 		"date": 1969,
-		"label": "Moon Landing",
+		"label": "நிலவில் தரையிரக்கம்",
 		"article":"moon_landing.txt",
 		"accent": [115, 132, 205, 255],
 		"asset": 
@@ -518,7 +518,7 @@
 	},
 	{
 		"date": 1859,
-		"label": "Darwin's\nTheory of Evolution",
+		"label": "டார்வினின் பரிணாமக் கோட்பாடு",
 		"article":"darwin.txt",
 		"asset": 
 		{
@@ -532,7 +532,7 @@
 	},
 	{
 		"date": 1952,
-		"label": "Nelson Mandela",
+		"label": "நெல்சன் மண்டேலா",
 		"article":"nelson_mandela.txt",
 		"asset": 
 		{
@@ -544,7 +544,7 @@
 	},
 	{
 		"date": 1867,
-		"label": "Marie Curie",
+		"label": "மேரி க்யூரி",
 		"article":"marie_curie.txt",
 		"asset": 
 		{
@@ -556,7 +556,7 @@
 	},
 	{
 		"date": 1903,
-		"label": "Suffragettes",
+		"label": "வாக்குரிமை",
 		"article":"suffragette.txt",
 		"asset": 
 		{
@@ -568,7 +568,7 @@
 	},
 	{
 		"date": 1932,
-		"label": "Amelia Earhart",
+		"label": "அமெலியா எர்ராட்",
 		"id":"amelia",
 		"article":"amelia_earhart.txt",
 		"asset":
@@ -582,7 +582,7 @@
 	{
 		"start": 1939,
 		"end": 1945,
-		"label": "World War II",
+		"label": "இரண்டாம் உலகப் போர்",
 		"article":"world_war_ii.txt",
 		"accent": [227, 21, 55, 255],
 		"asset": 
@@ -595,7 +595,7 @@
 	},
 	{
 		"date": 1939,
-		"label": "Alan Turing",
+		"label": "அலன் மாத்திசன் டூரிங்",
 		"article":"alan_turing.txt",
 		"asset":
 		{
@@ -607,7 +607,7 @@
 	},
 	{
 		"date": 1963,
-		"label": "Martin Luther King, Jr.",
+		"label": "மார்ட்டின் லூதர் கிங். சர்",
 		"article":"martin_luther_king.txt",
 		"id":"mlk",
 		"asset":
@@ -620,7 +620,7 @@
 	},
 	{
 		"date": 1990,
-		"label": "World Wide Web",
+		"label": "உலகளாவிய வலை",
 		"accent": [115, 132, 205, 255],
 		"article":"internet.txt",
 		"asset": 

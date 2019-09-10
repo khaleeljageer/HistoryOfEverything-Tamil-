@@ -66,7 +66,7 @@ class _ArticleWidgetState extends State<ArticleWidget> {
         color: darkText.withOpacity(darkText.opacity * 0.68),
         fontSize: 17.0,
         height: 1.5,
-        fontFamily: "RobotoMedium");
+        fontFamily: "NotoTamilBlack");
     TextStyle em = TextStyle(
         color: darkText.withOpacity(darkText.opacity * 0.68),
         fontSize: 17.0,

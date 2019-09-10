@@ -32,7 +32,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.twodimensions.timeline"
+        applicationId "com.twodimensions.timeline.tamil"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode flutterVersionCode.toInteger()

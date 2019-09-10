@@ -1,3 +1,2 @@
-Mammals are a group of vertebrate animals which form the class Mammalia. They have fur or hair and a very precise kind of temperature regulation.
-
-With the exception of the monotremes, all mammals bear live young. They also produce milk for the young. Parental care of the young is universal among mammals, and it is essential because live birth limits the number of offspring.
+__பாலூட்டிகள்__ ( 200 மில்லியன் ஆண்டுகள் முன்பு):
+__பாலூட்டிகள்__ முதுகெலும்புள்ள விலங்கினங்களில் ஒரு தொகுதி ஆகும்.  அவை பாலூட்டி வகைகளை உருவாக்குகின்றன.  அவற்றின் ரோமங்கள் அல்லது முடிகள் (கூந்தல்) மிகவும் துல்லியமான வகையில் வெப்பநிலையைக் கட்டுப்படுத்துகிறது.  மோனோட்ரீம் வகைகளைத் தவிர, மற்ற அனைத்து வகை பாலூட்டிகளும் இளமையாகவே வாழ்கின்றன.  அவை இளம் வயதினரான அதன்  குட்டிகளுக்கு தேவையான பாலை உற்பத்தி செய்கின்றன.  இளம் வயது உடைய பாலூட்டிகள் அதன் பெற்றோர் கவனிப்பிலேயே வளர்வது உலகளாவிய நிலையில் நடைபெறும் ஒரு நிகழ்வு ஆகும்.  மேலும், இத்தகைய கவனிப்புகள் நேரடியாக பிறக்கும் சந்ததிகளின் எண்ணிக்கையைக் கட்டுப்படுத்துவதால் இது அவசியமாகிறது.

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Flare-Flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Flare-Flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Flare-Flutter/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Flare-Flutter/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Nima-Flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Nima-Flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Nima-Flutter/example/hop/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Nima-Flutter/example/hop/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Nima-Flutter/example/ik/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Nima-Flutter/example/ik/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Nima-Flutter/example/json_reader/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dependencies/Nima-Flutter/example/json_reader/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tools/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tools/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

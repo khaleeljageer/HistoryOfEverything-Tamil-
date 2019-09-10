@@ -1,6 +1,6 @@
 [
     {
-        "label": "Birth of the Universe",
+        "label": "பிரபஞ்சத்தின் தோற்றம்",
         "background": "#083158",
         "color": "#ffffff",
         "asset":"milky",
@@ -9,27 +9,27 @@
             {
                 "start": -15000000000,
                 "end": -10000000000,
-                "label": "Big Bang"
+                "label": "பெரு வெடிப்பு"
             },
             {
                 "start": -4625000000,
                 "end": -4560000000,
-                "label": "Birth of the Sun"
+                "label": "சூரியனின் தோற்றம்"
             },
             {
                 "start": -4520000000,
                 "end": -4490000000,
-                "label": "Earth is Born"
+                "label": "பூமி பிறந்தது"
             },
             {
                 "start": -4250000000,
                 "end": -3890000000,
-                "label": "Heavy Bombardment"
+                "label": "கடுமையான விண்கல் தாக்குதல்"
             }
         ]
     },
     {
-        "label": "Life on Earth",
+        "label": "பூமியில் உயிரினங்கள்",
         "background": "#fdfdfd",
         "color": "#000000",
         "asset":"fish",
@@ -38,32 +38,32 @@
             {
                 "start": -4300000000,
                 "end": -3560000000,
-                "label": "Single Celled Organisms"
+                "label": "ஒரு செல் உயிரினம்"
             },
             {
                 "start": -638000000,
                 "end": -350000000,
-                "label": "Animals"
+                "label": "விலங்குகள்"
             },
             {
                 "start": -320000000,
                 "end": -25000000,
-                "label": "Dinosaur Age"
+                "label": "டைனோசர்கள் காலம்"
             },
             {
                 "start": -215550384.05521244,
                 "end": -167149739.29848185,
-                "label": "Mammals"
+                "label": "பாலூட்டிகள்"
             },
             {
                 "start": -6800000,
                 "end": -3000000,
-                "label": "Humans"
+                "label": "மனிதர்கள்"
             }
         ]
     },
     {
-        "label": "Common Era",
+        "label": "பொது சகாப்தம்",
         "background": "#001d22",
         "color": "#ffffff",
         "asset":"mlk",
@@ -72,42 +72,42 @@
             {
                 "start": 900,
                 "end": 1587,
-                "label": "Crusades"
+                "label": "சிலுவைப் போர்"
             },
             {
                 "start": 1620,
                 "end": 1824,
-                "label": "Newton's Theory of Gravity"
+                "label": "நியூட்டனின் புவிஈர்ப்பு விதி"
             },
             {
                 "start": 1852,
                 "end": 1876,
-                "label": "Marie Curie"
+                "label": "மேரி கியூரி"
             },
             {
                 "start": 1914,
                 "end": 1952,
-                "label": "Amelia Earhart"
+                "label": "அமெலியா எரார்ட்"
             },
             {
                 "start": 1910,
                 "end": 1917,
-                "label": "World War I"
+                "label": "முதல் உலகப் போர்"
             },
             {
                 "start": 1930,
                 "end": 1955,
-                "label": "World War II"
+                "label": "இரண்டாம் உலகப் போர்"
             },
             {
                 "start": 1956,
                 "end": 1972,
-                "label": "Martin Luther King, Jr."
+                "label": "சர். மார்ட்டின் லூதர் கிங்"
             },
             {
                 "start": 1955,
                 "end": 2000,
-                "label": "Moon Landing"
+                "label": "நிலவில் தரையிரக்கம்"
             }
         ]
     }

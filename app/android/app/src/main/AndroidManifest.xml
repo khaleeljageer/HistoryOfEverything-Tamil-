@@ -14,7 +14,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="History"
+        android:label="வரலாறு"
         android:icon="@mipmap/ic_launcher_app">
         <activity
             android:name=".MainActivity"

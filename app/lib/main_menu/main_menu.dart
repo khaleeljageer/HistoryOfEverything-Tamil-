@@ -292,7 +292,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                                             child: Image.asset(
                                                 "assets/twoDimensions_logo.png",
                                                 height: 10.0))),
-                                    Text("The History of Everything",
+                                    Text("அனைத்தையும் பற்றிய வரலாறு",
                                         textAlign: TextAlign.left,
                                         style: TextStyle(
                                             color: darkText.withOpacity(

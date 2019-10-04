@@ -1,4 +1,6 @@
-# The History of Everything
+# அனைத்தையும் பற்றிய வரலாறு
+
+[The History of Everything](https://github.com/2d-inc/HistoryOfEverything) எனும் ஆங்கில செயலியின் தமிழ்பதிப்பு இது.
 
 <img align="right" src="https://cdn.2dimensions.com/1_Start.gif" height="400">
 

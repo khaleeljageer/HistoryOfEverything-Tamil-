@@ -11,7 +11,7 @@ class MenuSectionData {
   Color textColor;
   Color backgroundColor;
   String assetId;
-  List<MenuItemData> items = List<MenuItemData>();
+  List<MenuItemData> items = [];
 }
 
 /// Data container for all the sub-elements of the [MenuSection].
@@ -19,11 +19,13 @@ class MenuItemData {
   String label;
   double start;
   double end;
+  // 填充
   bool pad = false;
   double padTop = 0.0;
   double padBottom = 0.0;
 
   MenuItemData();
+
   /// When initializing this object from a [TimelineEntry], fill in the
   /// fields according to the [entry] provided. The entry in fact specifies
   /// a [label], a [start] and [end] times.
@@ -34,6 +36,7 @@ class MenuItemData {
     /// Pad the edges of the screen.
     pad = true;
     TimelineAsset asset = entry.asset;
+
     /// Extra padding for the top base don the asset size.
     padTop = asset == null ? 0.0 : asset.height * Timeline.AssetScreenScale;
     if (asset is TimelineAnimatedAsset) {
@@ -44,11 +47,9 @@ class MenuItemData {
       start = entry.start;
       end = entry.end;
     } else {
-      /// No need to pad here as we are centering on a single item.
+      /// 由于我们集中在单个项目上，因此无需在此处填充。
       double rangeBefore = double.maxFinite;
-      for (TimelineEntry prev = entry.previous;
-          prev != null;
-          prev = prev.previous) {
+      for (var prev = entry.previous; prev != null; prev = prev.previous) {
         double diff = entry.start - prev.start;
         if (diff > 0.0) {
           rangeBefore = diff;
@@ -65,15 +66,16 @@ class MenuItemData {
         }
       }
       double range = min(rangeBefore, rangeAfter) / 2.0;
+
       start = entry.start;
       end = entry.end + range;
     }
   }
 }
 
-/// This class has the sole purpose of loading the resources from storage and 
-/// de-serializing the JSON file appropriately. 
-/// 
+/// This class has the sole purpose of loading the resources from storage and
+/// de-serializing the JSON file appropriately.
+///
 /// `menu.json` contains an array of objects, each with:
 /// * label - the title for the section
 /// * background - the color on the section background
@@ -83,8 +85,9 @@ class MenuItemData {
 /// as well as the label to display in the [MenuSection].
 class MenuData {
   List<MenuSectionData> sections = [];
+
   Future<bool> loadFromBundle(String filename) async {
-    List<MenuSectionData> menu = List<MenuSectionData>();
+    List<MenuSectionData> menu = [];
     String data = await rootBundle.loadString(filename);
     List jsonEntries = json.decode(data) as List;
     for (dynamic entry in jsonEntries) {

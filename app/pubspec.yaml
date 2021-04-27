@@ -8,9 +8,10 @@ description: Flutter Launch Demo
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
 version: 1.0.1+19
+publish_to: none
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.8.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -19,12 +20,12 @@ dependencies:
     path: ../dependencies/Nima-Flutter
   flare_flutter:
     path: ../dependencies/Flare-Flutter/flare_flutter
-  flutter_markdown: ^0.2.0
-  share: ^0.5.3
+  flutter_markdown: ^0.6.1
+  share: ^2.0.1
   intl: ">=0.14.0"
-  shared_preferences: ^0.4.3
-  rxdart: ^0.19.0
-  url_launcher: ^4.0.1
+  shared_preferences: ^2.0.5
+  rxdart: ^0.26.0
+  url_launcher: ^6.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

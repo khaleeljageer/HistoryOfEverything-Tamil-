@@ -19,9 +19,9 @@ import "package:timeline/colors.dart";
 import "package:timeline/timeline/timeline_entry.dart";
 import 'package:timeline/timeline/timeline_widget.dart';
 
-/// The Main Page of the Timeline App. 
-/// 
-/// This Widget lays out the search bar at the top of the page, 
+/// The Main Page of the Timeline App.
+///
+/// This Widget lays out the search bar at the top of the page,
 /// the three card-sections for accessing the main events on the Timeline,
 /// and it'll provide on the bottom three links for quick access to your Favorites,
 /// a Share Menu and the About Page.
@@ -34,12 +34,12 @@ class MainMenuWidget extends StatefulWidget {
 
 class _MainMenuWidgetState extends State<MainMenuWidget> {
   /// State is maintained for two reasons:
-  /// 
+  ///
   /// 1. Search Functionality:
-  /// When the search bar is tapped, the Widget view is filled with all the 
+  /// When the search bar is tapped, the Widget view is filled with all the
   /// search info -- i.e. the [ListView] containing all the results.
   bool _isSearching = false;
-  
+
   /// 2. Section Animations:
   /// Each card section contains a Flare animation that's playing in the background.
   /// These animations are paused when they're not visible anymore (e.g. when search is visible instead),
@@ -47,7 +47,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
   bool _isSectionActive = true;
 
   /// The [List] of search results that is displayed when searching.
-  List<TimelineEntry> _searchResults = List<TimelineEntry>();
+  List<TimelineEntry> _searchResults = [];
 
   /// [MenuData] is a wrapper object for the data of each Card section.
   /// This data is loaded from the asset bundle during [initState()]
@@ -58,7 +58,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
   final FocusNode _searchFocusNode = FocusNode();
   Timer _searchTimer;
 
-  cancelSearch() {
+  void cancelSearch() {
     if (_searchTimer != null && _searchTimer.isActive) {
       /// Remove old timer.
       _searchTimer.cancel();
@@ -69,7 +69,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
   /// Helper function which sets the [MenuItemData] for the [TimelineWidget].
   /// This will trigger a transition from the current menu to the Timeline,
   /// thus the push on the [Navigator], and by providing the [item] as
-  /// a parameter to the [TimelineWidget] constructor, this widget will know 
+  /// a parameter to the [TimelineWidget] constructor, this widget will know
   /// where to scroll to.
   navigateToTimeline(MenuItemData item) {
     _pauseSection();
@@ -81,22 +81,24 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
         .then(_restoreSection);
   }
 
-  _restoreSection(v) => setState(() => _isSectionActive = true);
-  _pauseSection() => setState(() => _isSectionActive = false);
+  void _restoreSection(v) => setState(() => _isSectionActive = true);
+
+  void _pauseSection() => setState(() => _isSectionActive = false);
 
   /// Used by the [_searchTextController] to properly update the state of this widget,
   /// and consequently the layout of the current view.
-  updateSearch() {
+  void updateSearch() {
     cancelSearch();
     if (!_isSearching) {
       setState(() {
-        _searchResults = List<TimelineEntry>();
+        _searchResults = <TimelineEntry>[];
       });
       return;
     }
     String txt = _searchTextController.text.trim();
+
     /// Perform search.
-    /// 
+    ///
     /// A [Timer] is used to prevent unnecessary searches while the user is typing.
     _searchTimer = Timer(Duration(milliseconds: txt.isEmpty ? 0 : 350), () {
       Set<TimelineEntry> res = SearchManager.init().performSearch(txt);
@@ -106,13 +108,14 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
     });
   }
 
-  initState() {
+  @override
+  void initState() {
     super.initState();
 
     /// The [_menu] loads a JSON file that's stored in the assets folder.
     /// This asset provides all the necessary information for the cards,
     /// such as labels, background colors, the background Flare animation asset,
-    /// and for each element in the expanded card, the relative position on the [Timeline]. 
+    /// and for each element in the expanded card, the relative position on the [Timeline].
     _menu.loadFromBundle("assets/menu.json").then((bool success) {
       if (success) setState(() {}); // Load the menu.
     });
@@ -131,17 +134,17 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
 
   /// A [WillPopScope] widget wraps the menu, so that before dismissing the whole app,
   /// search will be popped first. Otherwise the app will proceed as usual.
-  Future<bool> _popSearch() {
+  Future<bool> _popSearch() async {
     if (_isSearching) {
       setState(() {
         _searchFocusNode.unfocus();
         _searchTextController.clear();
         _isSearching = false;
       });
-      return Future(() => false);
+      return false;
     } else {
       Navigator.of(context).pop(true);
-      return Future(() => true);
+      return true;
     }
   }
 
@@ -154,19 +157,20 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
     EdgeInsets devicePadding = MediaQuery.of(context).padding;
 
     List<Widget> tail = [];
-    /// Check the current state before creating the layout for the menu (i.e. [tail]).
-    /// 
-    /// If the app is searching, lay out the results.
-    /// Otherwise, insert the menu information with all the various sections.
+
+    // Check the current state before creating the layout for the menu (i.e. [tail]).
+    //
+    // If the app is searching, lay out the results.
+    // Otherwise, insert the menu information with all the various sections.
     if (_isSearching) {
       for (int i = 0; i < _searchResults.length; i++) {
-        tail.add(RepaintBoundary(child: 
-            ThumbnailDetailWidget(_searchResults[i],
-            hasDivider: i != 0, tapSearchResult: _tapSearchResult)
-        ));
+        tail.add(RepaintBoundary(
+            child: ThumbnailDetailWidget(_searchResults[i],
+                hasDivider: i != 0, tapSearchResult: _tapSearchResult)));
       }
     } else {
       tail
+        // 三大菜单 [Birth of Universe] [Life on  Earth] [Common Era]
         ..addAll(_menu.sections
             .map<Widget>((MenuSectionData section) => Container(
                 margin: EdgeInsets.only(top: 20.0),
@@ -180,12 +184,13 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                   assetId: section.assetId,
                 )))
             .toList(growable: false))
+        // 分割线
         ..add(Container(
           margin: EdgeInsets.only(top: 40.0, bottom: 22),
           height: 1.0,
           color: const Color.fromRGBO(151, 151, 151, 0.29),
         ))
-        ..add(FlatButton(
+        ..add(TextButton(
             onPressed: () {
               _pauseSection();
               Navigator.of(context)
@@ -193,48 +198,52 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                       builder: (BuildContext context) => FavoritesPage()))
                   .then(_restoreSection);
             },
-            color: Colors.transparent,
-            child:
-                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Container(
-                margin: EdgeInsets.only(right: 15.5),
-                child: Image.asset("assets/heart_icon.png",
-                    height: 20.0,
-                    width: 20.0,
-                    color: Colors.black.withOpacity(0.65)),
-              ),
-              Text(
-                "Your Favorites",
-                style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: "RobotoMedium",
-                    color: Colors.black.withOpacity(0.65)),
-              )
-            ])))
-        ..add(FlatButton(
-            onPressed: () => Share.share(
-                "Check out The History of Everything! " + (Platform.isAndroid ? "https://play.google.com/store/apps/details?id=com.twodimensions.timeline" : "itms://itunes.apple.com/us/app/apple-store/id1441257460?mt=8")),
-            color: Colors.transparent,
-            child:
-                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Container(
-                margin: EdgeInsets.only(right: 15.5),
-                child: Image.asset("assets/share_icon.png",
-                    height: 20.0,
-                    width: 20.0,
-                    color: Colors.black.withOpacity(0.65)),
-              ),
-              Text(
-                "Share",
-                style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: "RobotoMedium",
-                    color: Colors.black.withOpacity(0.65)),
-              )
-            ])))
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 15.5),
+                  child: Image.asset("assets/heart_icon.png",
+                      height: 20.0,
+                      width: 20.0,
+                      color: Colors.black.withOpacity(0.65)),
+                ),
+                Text(
+                  "Your Favorites",
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: "RobotoMedium",
+                      color: Colors.black.withOpacity(0.65)),
+                )
+              ],
+            )))
+        ..add(TextButton(
+            onPressed: () => Share.share("Check out The History of Everything! " +
+                (Platform.isAndroid
+                    ? "https://play.google.com/store/apps/details?id=com.twodimensions.timeline"
+                    : "itms://itunes.apple.com/us/app/apple-store/id1441257460?mt=8")),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 15.5),
+                  child: Image.asset("assets/share_icon.png",
+                      height: 20.0,
+                      width: 20.0,
+                      color: Colors.black.withOpacity(0.65)),
+                ),
+                Text(
+                  "Share",
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: "RobotoMedium",
+                      color: Colors.black.withOpacity(0.65)),
+                )
+              ],
+            )))
         ..add(Padding(
           padding: const EdgeInsets.only(bottom: 30.0),
-          child: FlatButton(
+          child: TextButton(
               onPressed: () {
                 _pauseSection();
                 Navigator.of(context)
@@ -242,24 +251,25 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                         builder: (BuildContext context) => AboutPage()))
                     .then(_restoreSection);
               },
-              color: Colors.transparent,
-              child:
-                  Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Container(
-                  margin: EdgeInsets.only(right: 15.5),
-                  child: Image.asset("assets/info_icon.png",
-                      height: 20.0,
-                      width: 20.0,
-                      color: Colors.black.withOpacity(0.65)),
-                ),
-                Text(
-                  "About",
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: "RobotoMedium",
-                      color: Colors.black.withOpacity(0.65)),
-                )
-              ])),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 15.5),
+                    child: Image.asset("assets/info_icon.png",
+                        height: 20.0,
+                        width: 20.0,
+                        color: Colors.black.withOpacity(0.65)),
+                  ),
+                  Text(
+                    "About",
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontFamily: "RobotoMedium",
+                        color: Colors.black.withOpacity(0.65)),
+                  )
+                ],
+              )),
         ));
     }
 
@@ -271,42 +281,40 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
       onWillPop: _popSearch,
       child: Container(
           color: background,
-          child: Padding(
-            padding: EdgeInsets.only(top: devicePadding.top),
-            child: SingleChildScrollView(
-                padding:
-                    EdgeInsets.only(top: 20.0, left: 20, right: 20, bottom: 20),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                          Collapsible(
-                              isCollapsed: _isSearching,
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 20.0, bottom: 12.0),
-                                        child: Opacity(
-                                            opacity: 0.85,
-                                            child: Image.asset(
-                                                "assets/twoDimensions_logo.png",
-                                                height: 10.0))),
-                                    Text("The History of Everything",
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                            color: darkText.withOpacity(
-                                                darkText.opacity * 0.75),
-                                            fontSize: 34.0,
-                                            fontFamily: "RobotoMedium"))
-                                  ])),
-                          Padding(
-                              padding: EdgeInsets.only(top: 22.0),
-                              child: SearchWidget(
-                                  _searchFocusNode, _searchTextController))
-                        ] +
-                        tail)),
-          )),
+          child: SingleChildScrollView(
+              padding:
+                  EdgeInsets.only(top: 20.0, left: 20, right: 20, bottom: 20),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                        SizedBox(height: devicePadding.top),
+                        Collapsible(
+                            isCollapsed: _isSearching,
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 20.0, bottom: 12.0),
+                                      child: Opacity(
+                                          opacity: 0.85,
+                                          child: Image.asset(
+                                              "assets/twoDimensions_logo.png",
+                                              height: 10.0))),
+                                  Text("The History of Everything",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: darkText.withOpacity(
+                                              darkText.opacity * 0.75),
+                                          fontSize: 34.0,
+                                          fontFamily: "RobotoMedium"))
+                                ])),
+                        Padding(
+                            padding: EdgeInsets.only(top: 22.0),
+                            child: SearchWidget(
+                                _searchFocusNode, _searchTextController))
+                      ] +
+                      tail))),
     );
   }
 }

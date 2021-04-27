@@ -1,9 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:timeline/bloc_provider.dart';
 import 'package:timeline/colors.dart';
 import 'package:timeline/main_menu/main_menu.dart';
+
+const DRAW_IMAGE = false;
 
 /// The app is wrapped by a [BlocProvider]. This allows the child widgets
 /// to access other components throughout the hierarchy without the need
